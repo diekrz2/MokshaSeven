@@ -16,14 +16,14 @@
 	styles{
 
 	style { name: "notification_title_style";
-	   base: "font=Sans:style=Bold font_size=12 align=center color=#FFFFFF wrap=none text_class=notification_title";
+	   base: "font=Sans:style=Bold font_size=12 align=center color=#000000 wrap=none text_class=notification_title";
 
 	   /* No underline, just in case */
 
 	   tag: "u" "";   
 	}
          style { name: "notification_body_style";
-            base: "font=Sans font_size=11 align=center color=#FFFFFF wrap=word text_class=notification_body";
+            base: "font=Sans font_size=11 align=center color=#000000 wrap=word text_class=notification_body";
             tag: "b" "+ font=Sans:style=Bold";
             tag: "i" "+ font=Sans:style=Italic";
          }
