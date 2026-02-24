@@ -57,12 +57,14 @@
 
             description {
                state: "default" 0.0;
-               rel1.offset: 20 18;
+			   align: 0.0 0.5;
+			   aspect: 1.0 1.0;
+			   aspect_preference: BOTH;
+               rel1.offset: 12 12;
+			   rel2.offset: 12 -13;
                rel2.relative: 0.0 1.0;
-               rel2.offset: 60 -18;
-               aspect: 1.0 1.0;
-               aspect_preference: BOTH;
-               min: 32 32;
+               min: 24 24;
+			   fixed: 1 1;
             }
          }
 
