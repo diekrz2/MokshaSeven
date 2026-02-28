@@ -68,62 +68,74 @@
 
       /* Notif title */
 
-      part {
-         name: "notification.text.title";
-         type: TEXTBLOCK;
-         mouse_events: 0;
-         scale: 1;
+		part {
+		  name: "notification.text.title";
+		  type: TEXTBLOCK;
+		  mouse_events: 0;
+		  scale: 1;
 
-		description {
-		   state: "default" 0.0;
+		  description {
+			state: "default" 0.0;
 
-		   rel1.to_x: "notification.swallow.app_icon";
-		   rel1.relative: 1.0 0.0;
-		   rel1.offset: 12 12;
+			rel1.to_x: "notification.swallow.app_icon";
+			rel1.relative: 1.0 0.0;
+			rel1.offset: 12 12;
 
-		   rel2.relative: 1.0 0.0;
-		   rel2.offset: -48 32;
-		   
-		   align: 0.0 0.0;
+			rel2.relative: 1.0 0.0;
+			rel2.offset: -48 32;
 
-		   min: 0 24;
+			align: 0.0 0.0;
 
-		   text {
+			min: 220 26;               
+
+			text {
 			  style: "notification_title_style";
-			  align: 0.0 0.5;
-			  min: 0 1;
-		   }
+			  align: 0.0 0.5;       
+			  
+			  /* forcing notif width */
+			     
+			  min: 1 1;                
+			}
+		  }
 		}
-      }
 
       /* Text */
 
-      part {
-         name: "notification.textblock.message";
-         type: TEXTBLOCK;
-         mouse_events: 0;
-         scale: 1;
+		 part {
+		  name: "notification.textblock.message";
+		  type: TEXTBLOCK;
+		  mouse_events: 0;
+		  scale: 1;
 
-		description {
-		   state: "default" 0.0;
+		  description {
+			state: "default" 0.0;
 
-		   rel1.to_x: "notification.swallow.app_icon";
-		   rel1.to_y: "notification.text.title";
-		   rel1.relative: 1.0 1.0;
-		   rel1.offset: 12 6;
+			rel1.to_x: "notification.swallow.app_icon";
+			rel1.to_y: "notification.text.title";
+			rel1.relative: 1.0 1.0;
+			rel1.offset: 12 6;
 
-		   rel2.relative: 1.0 1.0;
-		   rel2.offset: -16 -48;
+			/* Nuovo ancoraggio: si ferma sempre SOPRA le actions */
+			rel2.to_y: "notification.swallow.actions";
+			rel2.relative: 1.0 0.0;
+			
+			/* small gap between text and buttons */
+			
+			rel2.offset: -16 -9;       
 
-		   min: 200 20;
+			min: 220 30;
 
-		   text {
+			text {
 			  style: "notification_body_style";
 			  text: "";
 			  ellipsis: -1;
-		   }
+			  
+			  /* wrapping for text lines */
+			  
+			  min: 0 1;                
+			}
+		  }
 		}	
-      }	
 
       /* Invisible area for close button */
 
@@ -168,31 +180,32 @@
       /* Container for action buttons */
 
 		part {
-		   name: "notification.swallow.actions";
-		   type: SWALLOW;
-		   mouse_events: 1;
+		  name: "notification.swallow.actions";
+		  type: SWALLOW;
+		  mouse_events: 1;
 
-		   description {
-			  state: "default" 0.0;
-			  visible: 0;
+		  description {
+			state: "default" 0.0;
+			visible: 0;
 
-			  rel1.to_x: "notification.swallow.app_icon";
-			  rel1.to_y: "notification.textblock.message";
-			  rel1.relative: 1.0 1.0;
-			  rel1.offset: 12 8;
+			rel1.to_x: "notification.swallow.app_icon";
+			rel1.relative: 1.0 1.0;
+			rel1.offset: 12 -52;       
 
-			  rel2.relative: 1.0 1.0;
-			  rel2.offset: -12 -12;
+			rel2.relative: 1.0 1.0;
+			rel2.offset: -12 -12;
+			
+			/* no space taken if hidden */
 
-			  min: 200 1;
-		   }
+			min: 0 0;                  
+		  }
 
-		   description {
-			  state: "visible" 0.0;
-			  inherit: "default" 0.0;
-			  visible: 1;
-			  min: 200 40;
-		   }
+		  description {
+			state: "visible" 0.0;
+			inherit: "default" 0.0;
+			visible: 1;
+			min: 220 42;               
+		  }
 		}
    }
 
