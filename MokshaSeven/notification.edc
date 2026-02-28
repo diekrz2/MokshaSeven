@@ -115,7 +115,6 @@
 			rel1.relative: 1.0 1.0;
 			rel1.offset: 12 6;
 
-			/* Nuovo ancoraggio: si ferma sempre SOPRA le actions */
 			rel2.to_y: "notification.swallow.actions";
 			rel2.relative: 1.0 0.0;
 			
