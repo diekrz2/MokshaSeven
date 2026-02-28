@@ -7,7 +7,7 @@
 
    images {
       image: "ilist_1.png" COMP;
-      image: "close.png"   COMP;
+      image: "icon_border_close.png"   COMP;
    }
 
    /* Styles for title and text */	
@@ -154,7 +154,7 @@
             state: "default" 0.0;
             rel1.to: "e.event.close";
             rel2.to: "e.event.close";
-            image.normal: "close.png";
+            image.normal: "icon_border_close.png";
             min: 18 18;
             max: 18 18;
          }
